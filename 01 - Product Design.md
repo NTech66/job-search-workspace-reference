@@ -50,5 +50,5 @@ The first product plan includes accounts, profile and file management, an extens
 
 ## Assumptions
 
-The service is multi-user and independently hosted, rather than a local-only personal tool. Provider and region selection is subject to the Egypt launch gate in [[07 - Egypt Privacy and Localization]].
+The service is multi-user and independently hosted, rather than a local-only personal tool. Provider and region selection is subject to the Egypt launch gate in [07 - Egypt Privacy and Localization](07%20-%20Egypt%20Privacy%20and%20Localization.md).
 
