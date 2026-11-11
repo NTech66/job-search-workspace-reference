@@ -76,4 +76,3 @@ draft → submitted → automated checks → owner review → approved/rejected 
 ## Compatibility
 
 Each release declares a minimum core SDK version and migration note. Older enabled versions are supported during a documented window or disabled with a clear reason. Application history retains the extension version used.
-

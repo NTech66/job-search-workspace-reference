@@ -37,4 +37,3 @@ Infer a calm, utilitarian visual tone until a brand is chosen. The interface sho
 ## Exploratory mockup
 
 The first browser mockup was throwaway concept work. It used fictional companies, listings, counts, and match percentages to show hierarchy. Do not treat those values as evidence or copy them into the product. Rebuild the screen with clearly labeled fixture data only.
-

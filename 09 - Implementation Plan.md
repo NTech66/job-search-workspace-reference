@@ -1,20 +1,30 @@
 ---
 title: Job Search Workspace — Implementation Plan
 created: 2026-11-11
-status: future build plan
+status: phased plan with search preview implemented
 aliases: [Implementation Plan]
 tags: [job-search, implementation-plan]
 ---
 
 # Job Search Workspace Implementation Plan
 
-> Future software build plan. The current work creates product reference notes only; it does not scaffold or deploy the app.
+> This remains the build plan for the full service. A local preview and first-party search adapters are now implemented; accounts, profile storage, community extension execution, AI, and submissions remain planned.
+
+## Implemented preview slice
+
+- Next.js bilingual interface and URL-backed job filters.
+- Server-side adapters for Adzuna (configured markets) and configured public Greenhouse, Lever, and Ashby employer boards.
+- Manual search link-outs for LinkedIn and Indeed pending appropriate partner authorization.
+- Unified listing cards that show the job description (and whether it is a snippet), employer, source and application links, posted date, workplace/type/level/salary when available, and explicit unavailable contact fields.
+- Source-specific errors, source link retention on deduplicated listings, and server-only API credential configuration.
+
+See [[10 - Source Adapters and Result Fields]] and [[References/Source Compatibility Matrix]].
 
 ## Goal and architecture
 
 Build a bilingual, independently hosted job-search workspace with private profiles/files, a reviewed in-app extension catalog, unified listings, and rule-based AI-assisted auto-apply that pauses rather than guesses.
 
-Recommended foundation: Next.js 16 + TypeScript App Router; Supabase Auth and Postgres/RLS; private Storage; Queues with a separate worker. Keep storage, AI, email, and source integrations behind adapters. Production provider/region is an Egypt legal gate because the current Supabase list does not include Egypt. See [04 - Technical Architecture](04%20-%20Technical%20Architecture.md) and [07 - Egypt Privacy and Localization](07%20-%20Egypt%20Privacy%20and%20Localization.md).
+Recommended foundation: Next.js 16 + TypeScript App Router; Supabase Auth and Postgres/RLS; private Storage; Queues with a separate worker. Keep storage, AI, email, and source integrations behind adapters. Production provider/region is an Egypt legal gate because the current Supabase list does not include Egypt. See [[04 - Technical Architecture]] and [[07 - Egypt Privacy and Localization]].
 
 ## Global constraints
 
@@ -42,13 +52,13 @@ Implement email sign-up/sign-in/recovery, profile facts, file metadata/versionin
 
 ### Task 3 — Extension SDK, catalog, and review lifecycle
 
-Implement ExtensionManifest, JobSourceExtension, and AnswerTemplateExtension from [05 - Extension System](05%20-%20Extension%20System.md). Add staged submission, validation/scanning, owner review, signed release, per-user enablement, grants, revoke, and rollback. Submitted code remains inert.
+Implement ExtensionManifest, JobSourceExtension, and AnswerTemplateExtension from [[05 - Extension System]]. Add staged submission, validation/scanning, owner review, signed release, per-user enablement, grants, revoke, and rollback. Submitted code remains inert.
 
 **Check:** only approved signed versions execute; hosts outside manifest are blocked; revocation blocks new calls; templates cannot grant code capabilities.
 
 ### Task 4 — Listing ingestion and unified search
 
-Implement normalized JobPosting, source IDs, freshness, canonical links, local/remote filters, workplace mode, employment type, seniority, date and source-provided salary. Deduplicate by source ID, then reviewed cross-source rules. Add URL-backed filters and source health states.
+Extend the preview adapters with additional officially permitted sources, source policy review, canonical links and freshness rules. Preserve every source URL when duplicates merge. Treat unknown contact, workplace, salary, level, or employment data as unavailable instead of guessing. Keep local-region and worldwide-remote behavior distinct.
 
 **Check:** fixtures cover local region, worldwide remote, all workplace modes, missing optional salary, cross-source duplicates, stale/closed entries, and partial outages.
 
@@ -89,13 +99,13 @@ type SubmissionResult =
   | { status: "failed"; reasonCode: string };
 ~~~
 
-Use [05 - Extension System](05%20-%20Extension%20System.md) as the contract source of truth.
+Use [[05 - Extension System]] as the contract source of truth.
 
 ## Review focus
 
 - Cross-account access through direct URLs, server actions, signed links, and background jobs.
 - Malicious extension/template content, prompt injection, and host-scope changes.
 - Duplicate/stale listings when sources disagree or a retry occurs.
+- Missing hirer contact or application-email data; the UI must show it as not provided rather than infer it.
 - Submission accepted by a source but not acknowledged to the worker.
 - Arabic RTL in filters, consent, statuses, and missing-question flows.
-

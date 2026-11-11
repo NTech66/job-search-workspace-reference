@@ -52,4 +52,3 @@ Listings may be current, stale, closed, or source-unavailable. Preserve source a
 ## Application states
 
 queued → submitting → submitted, needs_user_input, or failed. Unsupported sources use manual_link and must never appear as submitted. Queue retries use idempotency and cannot create duplicate submissions.
-

@@ -46,4 +46,3 @@ Every user-owned row has a user_id and is protected by RLS. Service/admin operat
 ## Reliability and observability
 
 Each extension call has a timeout and bounded retries. Source failures update extension health and freshness but do not silently erase previously verified listings. Metrics must come from actual records; never hard-code sample counts. Track queue depth, source failures, pauses, and outcomes without retaining unnecessary application content.
-

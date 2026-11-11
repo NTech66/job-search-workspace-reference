@@ -26,14 +26,41 @@ export interface JobPosting {
   externalId: string;
   title: string;
   company: string;
-  region: string;
-  workplace: "remote" | "onsite" | "hybrid";
+  region?: string;
+  workplace?: "remote" | "onsite" | "hybrid";
   employmentType?: SearchQuery["employmentType"];
   level?: SearchQuery["level"];
+  description: string;
+  descriptionCompleteness: "full" | "snippet" | "missing";
   sourceUrl: string;
+  applyUrl?: string;
+  applicationEmail?: string;
+  hiringContact?: { name?: string; email?: string };
   postedAt?: string;
   refreshedAt: string;
-  salary?: { minimum?: number; maximum?: number; currency: string };
+  salary?: { minimum?: number; maximum?: number; currency?: string; summary?: string };
+  department?: string;
+  team?: string;
+  sourceLinks: JobSourceReference[];
+}
+
+export interface JobSourceReference {
+  id: string;
+  name: string;
+  jobUrl: string;
+  applyUrl?: string;
+  attributionUrl?: string;
+}
+
+export interface SearchSourceStatus {
+  id: string;
+  name: string;
+  access: "api" | "configured_board" | "link_out";
+  configured: boolean;
+  status: "ready" | "needs_setup" | "manual_only" | "error";
+  resultCount: number;
+  message?: string;
+  searchUrl?: string;
 }
 
 export interface RefreshQuery { externalIds: string[] }

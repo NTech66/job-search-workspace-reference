@@ -1,7 +1,7 @@
 ---
 title: Job Search Workspace — Start Here
 created: 2026-11-11
-status: product plan
+status: plan plus local preview implementation
 aliases: [Job Search Platform]
 tags: [job-search, product, start-here]
 ---
@@ -12,16 +12,17 @@ A bilingual job-search and application workspace for people who want to search a
 
 ## Read in this order
 
-1. [01 - Product Design](01%20-%20Product%20Design.md) — approved product intent, scope, and decisions.
-2. [02 - Requirements and Journeys](02%20-%20Requirements%20and%20Journeys.md) — user needs and end-to-end flows.
-3. [03 - UI and Hallmark Direction](03%20-%20UI%20and%20Hallmark%20Direction.md) — visual and interaction rules.
-4. [04 - Technical Architecture](04%20-%20Technical%20Architecture.md) — stack, data boundaries, and system map.
-5. [05 - Extension System](05%20-%20Extension%20System.md) — community modules, review, and permissions.
-6. [06 - AI Applications and Safety](06%20-%20AI%20Applications%20and%20Safety.md) — eligibility, answer preparation, and safeguards.
-7. [07 - Egypt Privacy and Localization](07%20-%20Egypt%20Privacy%20and%20Localization.md) — Egypt launch review and bilingual consent.
-8. [08 - Roadmap and Acceptance](08%20-%20Roadmap%20and%20Acceptance.md) — delivery stages and product checks.
-9. [09 - Implementation Plan](09%20-%20Implementation%20Plan.md) — future build plan.
-10. [References/Source Compatibility Matrix](References/Source%20Compatibility%20Matrix.md) and [Glossary](Glossary.md) — source research and shared terms.
+1. [[01 - Product Design]] — approved product intent, scope, and decisions.
+2. [[02 - Requirements and Journeys]] — user needs and end-to-end flows.
+3. [[03 - UI and Hallmark Direction]] — visual and interaction rules.
+4. [[04 - Technical Architecture]] — stack, data boundaries, and system map.
+5. [[05 - Extension System]] — community modules, review, and permissions.
+6. [[06 - AI Applications and Safety]] — eligibility, answer preparation, and safeguards.
+7. [[07 - Egypt Privacy and Localization]] — Egypt launch review and bilingual consent.
+8. [[08 - Roadmap and Acceptance]] — delivery stages and product checks.
+9. [[09 - Implementation Plan]] — future build plan.
+10. [[10 - Source Adapters and Result Fields]] — implemented provider behavior and field availability.
+11. [[References/Source Compatibility Matrix]] and [[Glossary]] — source research and shared terms.
 
 ## Decisions already made
 
@@ -35,13 +36,12 @@ A bilingual job-search and application workspace for people who want to search a
 
 ## Current status
 
-This folder contains a product reference and build plan, not a working job-search app. The first visual mockup was exploratory and used fictional listings; it is not approved product data or final UI. No live listings, accounts, extensions, or submissions exist yet.
+This repository contains a local app preview with configurable server-side Adzuna and employer-board search adapters for Greenhouse, Lever, and Ashby. LinkedIn and Indeed open manual search pages. Live results require API keys and/or board IDs. Accounts, private profile/file storage, community extension execution, AI, and job application submission are not implemented. See [[10 - Source Adapters and Result Fields]].
 
 ## Launch gate
 
-Before production CVs or live applications are used, complete Egypt-specific legal review of the provider, data location, processing, consent, retention, and operator obligations. See [07 - Egypt Privacy and Localization](07%20-%20Egypt%20Privacy%20and%20Localization.md).
+Before production CVs or live applications are used, complete Egypt-specific legal review of the provider, data location, processing, consent, retention, and operator obligations. See [[07 - Egypt Privacy and Localization]].
 
 ## Maintenance
 
 Re-check official source policies and APIs before adding or updating extensions. Update the source matrix, extension version, and decision notes together. Keep Graphify outputs, if generated, under graphify-out/ in this folder.
-

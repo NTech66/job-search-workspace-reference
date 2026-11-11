@@ -20,4 +20,3 @@ tags: [job-search, glossary]
 - **Seniority:** internship, entry-level, mid-level, senior/advanced, or source-provided category.
 - **Needs user input:** application paused because a required answer is missing, unclear, or unsupported.
 - **Manual link:** a listing is discoverable, but no approved automatic submission capability exists.
-

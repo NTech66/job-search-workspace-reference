@@ -22,9 +22,11 @@ Deliver sign-up/sign-in, bilingual onboarding, profile editing, private file man
 
 ## Milestone 2 — Extensions and unified search
 
-Deliver versioned manifests, staged submissions, automated checks, owner approval, user install/permissions, fixture extension, normalized listing view, filters, URL state, dedupe, freshness, and source errors.
+The first preview includes server-side search adapters for configured Adzuna markets and public Greenhouse, Lever, and Ashby employer boards; LinkedIn and Indeed are manual search links pending authorization. Continue with versioned manifests, staged community submissions, automated checks, owner approval, user install/permissions, source policy review, stronger dedupe/freshness, and source errors.
 
 **Accept when:** unapproved/revoked extensions never execute; local-region and global-remote filters work; duplicates retain source links; counts reflect actual results; source outages are visible.
+
+Contact data acceptance: each displayed hirer name/email and application email is directly present in a source field or application instruction. Missing contact data is labeled as not provided. Never infer a personal address or name.
 
 ## Milestone 3 — Application preparation and automation
 
@@ -41,4 +43,3 @@ Deliver contributor submission, review feedback, publication, user opt-in, updat
 ## Measures
 
 Track actual freshness, source error rate, duplicate rate, paused applications, submission outcomes, queue age, and review backlog. Do not invent target metrics before a pilot baseline exists. Keep early beta opt-in and use synthetic accounts/listings for end-to-end tests.
-
