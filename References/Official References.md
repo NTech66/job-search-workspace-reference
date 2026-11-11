@@ -35,5 +35,5 @@ tags: [job-search, sources, references]
 
 ## Notes
 
-The English legal translation is for reference. Confirm authoritative Arabic materials and current requirements with qualified Egypt counsel. No job-board source is approved in this folder yet; see [[Source Compatibility Matrix]].
+The English legal translation is for reference. Confirm authoritative Arabic materials and current requirements with qualified Egypt counsel. No job-board source is approved in this folder yet; see [Source Compatibility Matrix](../Source%20Compatibility%20Matrix.md).
 
