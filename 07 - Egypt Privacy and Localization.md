@@ -43,5 +43,5 @@ Supabase's official [region list](https://supabase.com/docs/guides/platform/regi
 - [ ] Verify provider access controls, encryption, backups, and incident contacts.
 - [ ] Keep real-user data and live submissions disabled until gates are signed off.
 
-See [[References/Official References]]. Re-check publication/version dates at launch.
+See [References/Official References](References/Official%20References.md). Re-check publication/version dates at launch.
 
