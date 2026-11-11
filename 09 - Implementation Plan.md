@@ -14,7 +14,7 @@ tags: [job-search, implementation-plan]
 
 Build a bilingual, independently hosted job-search workspace with private profiles/files, a reviewed in-app extension catalog, unified listings, and rule-based AI-assisted auto-apply that pauses rather than guesses.
 
-Recommended foundation: Next.js 16 + TypeScript App Router; Supabase Auth and Postgres/RLS; private Storage; Queues with a separate worker. Keep storage, AI, email, and source integrations behind adapters. Production provider/region is an Egypt legal gate because the current Supabase list does not include Egypt. See [[04 - Technical Architecture]] and [[07 - Egypt Privacy and Localization]].
+Recommended foundation: Next.js 16 + TypeScript App Router; Supabase Auth and Postgres/RLS; private Storage; Queues with a separate worker. Keep storage, AI, email, and source integrations behind adapters. Production provider/region is an Egypt legal gate because the current Supabase list does not include Egypt. See [04 - Technical Architecture](04%20-%20Technical%20Architecture.md) and [07 - Egypt Privacy and Localization](07%20-%20Egypt%20Privacy%20and%20Localization.md).
 
 ## Global constraints
 
@@ -42,7 +42,7 @@ Implement email sign-up/sign-in/recovery, profile facts, file metadata/versionin
 
 ### Task 3 — Extension SDK, catalog, and review lifecycle
 
-Implement ExtensionManifest, JobSourceExtension, and AnswerTemplateExtension from [[05 - Extension System]]. Add staged submission, validation/scanning, owner review, signed release, per-user enablement, grants, revoke, and rollback. Submitted code remains inert.
+Implement ExtensionManifest, JobSourceExtension, and AnswerTemplateExtension from [05 - Extension System](05%20-%20Extension%20System.md). Add staged submission, validation/scanning, owner review, signed release, per-user enablement, grants, revoke, and rollback. Submitted code remains inert.
 
 **Check:** only approved signed versions execute; hosts outside manifest are blocked; revocation blocks new calls; templates cannot grant code capabilities.
 
@@ -89,7 +89,7 @@ type SubmissionResult =
   | { status: "failed"; reasonCode: string };
 ~~~
 
-Use [[05 - Extension System]] as the contract source of truth.
+Use [05 - Extension System](05%20-%20Extension%20System.md) as the contract source of truth.
 
 ## Review focus
 
