@@ -26,5 +26,5 @@ Use this note to evaluate a source before creating or approving an extension. Do
 
 ## Approval rule
 
-Decide separately for search, refresh, and submission. If there is no permitted submission path, mark manual_link. Never infer one capability from another. See [[05 - Extension System]] and [[08 - Roadmap and Acceptance]].
+Decide separately for search, refresh, and submission. If there is no permitted submission path, mark manual_link. Never infer one capability from another. See [05 - Extension System](../05%20-%20Extension%20System.md) and [08 - Roadmap and Acceptance](../08%20-%20Roadmap%20and%20Acceptance.md).
 
